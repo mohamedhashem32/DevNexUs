@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevNexus - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: #1E1E2D;
+            color: white;
+            padding: 20px;
+            font-size: 1.8em;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #222;
+            padding: 5px 30px;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 20px;
+        }
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #4DB6AC;
+        }
+        .login-btn {
+            background: #4DB6AC;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .login-btn:hover {
+            background: #26A69A;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            background: white;
+        }
+        .hero img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        .hero-text {
+            width: 50%;
+            padding: 40px;
+            text-align: left;
+            font-size: 1.2em;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px;
+        }
+        .service-box {
+            width: 350px;
+            background: white;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+            position: relative;
+        }
+        .service-box:hover {
+            transform: scale(1.08);
+        }
+        .service-box img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .service-box p {
+            color: #555;
+            margin: 15px 0;
+        }
+        .service-box button {
+            background: #4DB6AC;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .service-box button:hover {
+            background: #26A69A;
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 1px;
+            background: #1E1E2D;
+            color: white;
+            font-size: 1em;
+            text-align: center;
+        
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <a href="#" class="login-btn">Login</a>
+
+    </nav>
+    <header>
+        <h1>Welcome to DevNexus</h1>
+    </header>
+    <div class="hero">
+        <img src="devv.jpg" alt="Company Overview">
+        <div class="hero-text">
+            <p>DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more. We provide top-quality solutions tailored to your business needs. Our expert team ensures efficiency, security, and innovation in every project we handle. Join us and take your digital presence to the next level with DevNexus.</p>
+        </div>
+    </div>
+    <div class= "container">
+        <div class="service-box" onclick="location.href='web.html';" style="cursor: pointer;" >
+            <img src="webb.jpg" alt="Web Development">
+            <h3>Web Development</h3>
+            <p>Building modern and responsive websites tailored to your business needs.</p>
+            <button>Get Started</butto>
+        </div>
+        <div class="service-box" onclick="location.href='mobi.html';" style="cursor: pointer;" >
+            <img src="mobii.jpg" alt="Mobile App Development">
+            <h3>Mobile App Development</h3>
+            <p>Developing innovative and scalable mobile applications for iOS and Android.</p>
+            <button>Get Started</button>
+        </div>
+        <div class="service-box" onclick="location.href='Cybersecurity.html';" style="cursor: pointer;" >
+            <img src="cyber.jpg" alt="Cybersecurity">
+            <h3>Cybersecurity</h3>
+            <p>Ensuring robust security solutions to protect your digital assets.</p>
+            <button>Get Started</button>
+        </div>
+        <div class="service-box" onclick="location.href='Graphic.html';" style="cursor: pointer;" >
+            <img src="graph.jpg" alt="Graphic Design">
+            <h3>Graphic Design</h3>
+            <p>Creating visually stunning graphics and branding materials.</p>
+            <button>Get Started</button>
+        </div>
+        <div class="service-box" onclick="location.href='Server.html';" style="cursor: pointer;" >
+            <img src="serv.jpg" alt="Server Administration">
+            <h3>Server Administration</h3>
+            <p>Providing expert server setup, management, and maintenance services.</p>
+            <button>Get Started</button>
+        </div>
+        <div class="service-box" onclick="location.href='Video.html';" style="cursor: pointer;" >
+            <img src="vid.jpg" alt="Video Editing">
+            <h3>Video Editing</h3>
+            <p>Professional video editing services for high-quality content production.</p>
+            <button>Get Started</button>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 DevNexus. All Rights Reserved.</p>
+        <p>Contact us: devnexus466@gmail.com | +2001099004016</p>
+    </div>
+
+
+    
+</body>
+</html>

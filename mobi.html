@@ -1,0 +1,107 @@
+<!-- Web Development Plans Page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development Plans - DevNexus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 40px;
+        }
+        .plan-box {
+            width: 350px;
+            background: white;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+        .plan-box:hover {
+            transform: scale(1.08);
+        }
+        .plan-box h3 {
+            color: #333;
+        }
+        .plan-box p {
+            color: #555;
+        }
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #f4b400;
+            margin: 10px 0;
+        }
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 5px 0;
+        }
+        .btn {
+            background: #4DB6AC;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #377a73;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mobile App Development</h1>
+    </header>
+    <div class="container">
+        <div class="plan-box">
+            <h3>Basic Plan</h3>
+            <p class="price">$299</p>
+            <ul class="features">
+                <li>5 Pages Website</li>
+                <li>Responsive Design</li>
+                <li>Basic SEO</li>
+                <li>Email Support</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+        <div class="plan-box">
+            <h3>Standard Plan</h3>
+            <p class="price">$599</p>
+            <ul class="features">
+                <li>10 Pages Website</li>
+                <li>Advanced SEO</li>
+                <li>1 Year Free Hosting</li>
+                <li>Priority Support</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+        <div class="plan-box">
+            <h3>Premium Plan</h3>
+            <p class="price">$999</p>
+            <ul class="features">
+                <li>Unlimited Pages</li>
+                <li>E-commerce Integration</li>
+                <li>Full Custom Design</li>
+                <li>24/7 Support</li>
+            </ul>
+            <button class="btn">Choose Plan</button>
+        </div>
+    </div>
+</body>
+</html>
