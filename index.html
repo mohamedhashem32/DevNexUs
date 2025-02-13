@@ -120,9 +120,49 @@
             color: white;
             font-size: 1em;
             text-align: center;
-        
         }
 
+        /* Media Queries for Mobile */
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .hero img {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+            .hero-text {
+                width: 100%;
+                font-size: 1em;
+            }
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar ul li {
+                margin: 10px 0;
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .service-box {
+                width: 90%;
+                margin: 15px 0;
+            }
+            .service-box h3 {
+                font-size: 1.5em;
+            }
+            .service-box p {
+                font-size: 1em;
+            }
+            .service-box button {
+                font-size: 1em;
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -145,38 +185,38 @@
             <p>DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more. We provide top-quality solutions tailored to your business needs. Our expert team ensures efficiency, security, and innovation in every project we handle. Join us and take your digital presence to the next level with DevNexus.</p>
         </div>
     </div>
-    <div class= "container">
-        <div class="service-box" onclick="location.href='web.html';" style="cursor: pointer;" >
+    <div class="container">
+        <div class="service-box" onclick="location.href='web.html';" style="cursor: pointer;">
             <img src="webb.jpg" alt="Web Development">
             <h3>Web Development</h3>
             <p>Building modern and responsive websites tailored to your business needs.</p>
-            <button>Get Started</butto>
+            <button>Get Started</button>
         </div>
-        <div class="service-box" onclick="location.href='mobi.html';" style="cursor: pointer;" >
+        <div class="service-box" onclick="location.href='mobi.html';" style="cursor: pointer;">
             <img src="mobii.jpg" alt="Mobile App Development">
             <h3>Mobile App Development</h3>
             <p>Developing innovative and scalable mobile applications for iOS and Android.</p>
             <button>Get Started</button>
         </div>
-        <div class="service-box" onclick="location.href='Cybersecurity.html';" style="cursor: pointer;" >
+        <div class="service-box" onclick="location.href='Cybersecurity.html';" style="cursor: pointer;">
             <img src="cyber.jpg" alt="Cybersecurity">
             <h3>Cybersecurity</h3>
             <p>Ensuring robust security solutions to protect your digital assets.</p>
             <button>Get Started</button>
         </div>
-        <div class="service-box" onclick="location.href='Graphic.html';" style="cursor: pointer;" >
+        <div class="service-box" onclick="location.href='Graphic.html';" style="cursor: pointer;">
             <img src="graph.jpg" alt="Graphic Design">
             <h3>Graphic Design</h3>
             <p>Creating visually stunning graphics and branding materials.</p>
             <button>Get Started</button>
         </div>
-        <div class="service-box" onclick="location.href='Server.html';" style="cursor: pointer;" >
+        <div class="service-box" onclick="location.href='Server.html';" style="cursor: pointer;">
             <img src="serv.jpg" alt="Server Administration">
             <h3>Server Administration</h3>
             <p>Providing expert server setup, management, and maintenance services.</p>
             <button>Get Started</button>
         </div>
-        <div class="service-box" onclick="location.href='Video.html';" style="cursor: pointer;" >
+        <div class="service-box" onclick="location.href='Video.html';" style="cursor: pointer;">
             <img src="vid.jpg" alt="Video Editing">
             <h3>Video Editing</h3>
             <p>Professional video editing services for high-quality content production.</p>
@@ -187,8 +227,5 @@
         <p>&copy; 2025 DevNexus. All Rights Reserved.</p>
         <p>Contact us: devnexus466@gmail.com | +2001099004016</p>
     </div>
-
-
-    
 </body>
 </html>
