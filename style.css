@@ -249,12 +249,15 @@ padding: 10px 13px;
     font-size: 1em;
     text-align: center;
 }
+
+ 
 .social-icons {
     margin-top: 10px;
 }
 .social-icons a {
     margin: 0 10px;
-}
+    text-decoration: none;
+ }
 .social-icons img {
     width: 24px;
     height: 24px;
@@ -487,6 +490,18 @@ padding: 10px 13px;
     color: #cccccc;
     text-decoration: none;
     transition: color 0.3s ease;
+    list-style: none;
+}
+
+ul {
+    list-style: none;
+
+}
+
+a {
+    text-decoration: none !important;
+    color: #cccccc;
+
 }
 
 .footer-links a:hover {
