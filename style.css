@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -48,6 +49,128 @@ header {
 .login-btn:hover {
     background: #26A69A;
 }
+
+/* Dark Mode Toggle Button */
+.dark-mode-btn {
+    background: #4DB6AC;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    position: absolute; /* تغيير من margin إلى position */
+    right: 150px;
+   /* top: 50%;*/
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+.dark-mode-btn:hover {
+background: #26A69A;
+transform: rotate(20deg);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+background: #1a1a1a;
+color: #ffffff;
+}
+
+body.dark-mode .hero {
+background: #2d2d2d;
+}
+
+body.dark-mode .service-box {
+background: #2d2d2d;
+box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .service-box p {
+color: #ccc;
+}
+
+body.dark-mode .navbar {
+background: #111;
+}
+
+body.dark-mode header {
+background: #000;
+}
+
+body.dark-mode .footer {
+background: #000;
+}
+
+
+/* Dark Mode Styles */
+html.dark-mode {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+html.dark-mode body {
+    background: inherit;
+}
+
+html.dark-mode .hero {
+    background: #2d2d2d;
+}
+
+html.dark-mode .service-box {
+    background: #2d2d2d;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+}
+
+html.dark-mode .navbar {
+    background: #111 !important;
+}
+
+html.dark-mode header {
+    background: #000;
+}
+
+html.dark-mode .footer {
+    background: #000;
+}
+
+html.dark-mode .modal {
+    background: #2d2d2d;
+    color: white;
+}
+
+html.dark-mode .form-group input {
+    background: #1a1a1a;
+    color: white;
+    border-color: #444;
+}
+
+html.dark-mode .modal-tab {
+    border-color: #444;
+}
+
+html.dark-mode .modal-tab.active {
+    border-color: #4DB6AC;
+}
+
+html.dark-mode .service-box p {
+    color: #ccc;
+}
+
+html.dark-mode .hero-text {
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+.dark-mode-btn {
+margin-right: 10px;
+padding: 10px 13px;
+}
+}
+
+
+
+
 .hero {
     display: flex;
     justify-content: center;
