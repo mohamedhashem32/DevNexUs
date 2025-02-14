@@ -61,10 +61,10 @@ header {
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.2em;
-   position: absolute; /* تغيير من margin إلى position */
+    position: absolute; /* تغيير من margin إلى position */
     right: 150px;
- /*   top: 50%;*/
-  /*  transform: translateY(-50%);*/
+ /* top: 50%;*/
+ /* transform: translateY(-50%);*/
     transition: all 0.3s ease; 
     z-index: 1000;
 }
