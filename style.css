@@ -28,7 +28,7 @@ header {
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
-    
+margin-right: 250px;    
 }
 
 .navbar ul {
@@ -72,14 +72,14 @@ header {
     font-size: 1.2em;
     position: absolute; /* تغيير من margin إلى position */
     right: 150px;
-   /* top: 50%;*/
-    transform: translateY(-50%);
-    transition: all 0.3s ease;
+ /*   top: 50%;*/
+  /*  transform: translateY(-50%);*/
+    transition: all 0.3s ease; 
     z-index: 1000;
 }
 .dark-mode-btn:hover {
 background: #26A69A;
-transform: rotate(20deg);
+/* transform: rotate(20deg); */
 }
 
 /* Dark Mode Styles */
