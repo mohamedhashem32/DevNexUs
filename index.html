@@ -18,13 +18,13 @@
 <body>
     
     <nav class="navbar">
-       <!-- <button class="hamburger">☰</button>
+        <button class="hamburger">☰</button>
          <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-        </ul> -->
+        </ul> 
 
         <div class="logo1">DevNexus</div>
 
@@ -304,22 +304,33 @@
         });
 
 
-        // Dark Mode Toggle
-const darkModeToggle = document.getElementById('darkModeToggle');
-const htmlElement = document.documentElement;
+// الخطوة 3: تحديث الـ JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+    
+    // تحميل الإعدادات المحفوظة
+    const savedMode = localStorage.getItem('darkMode');
+    const isDark = savedMode === 'enabled';
+    
+    if (isDark) {
+        htmlElement.classList.add('dark-mode');
+    }
 
-// تحديث الكلاس على العنصر الصحيح
-darkModeToggle.addEventListener('click', () => {
-    htmlElement.classList.toggle('dark-mode');
-    const isDark = htmlElement.classList.contains('dark-mode');
-    
-    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-    
-    darkModeToggle.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        darkModeToggle.style.transform = 'scale(1)';
-    }, 200);
+    // إضافة حدث النقر
+    darkModeToggle.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark-mode');
+        
+        // حفظ الإعدادات
+        const isDarkNow = htmlElement.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkNow ? 'enabled' : 'disabled');
+        
+        // تأثير للزر عند النقر
+        darkModeToggle.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+            darkModeToggle.style.transform = 'scale(1)';
+        }, 200);
+    });
 });
 
 
