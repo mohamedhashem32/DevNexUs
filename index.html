@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -59,6 +60,66 @@
         .login-btn:hover {
             background: #26A69A;
         }
+
+        /* Dark Mode Toggle Button */
+.dark-mode-btn {
+    background: #4DB6AC;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.dark-mode-btn:hover {
+    background: #26A69A;
+    transform: rotate(20deg);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+body.dark-mode .hero {
+    background: #2d2d2d;
+}
+
+body.dark-mode .service-box {
+    background: #2d2d2d;
+    box-shadow: 0px 0px 10px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .service-box p {
+    color: #ccc;
+}
+
+body.dark-mode .navbar {
+    background: #111;
+}
+
+body.dark-mode header {
+    background: #000;
+}
+
+body.dark-mode .footer {
+    background: #000;
+}
+
+@media screen and (max-width: 768px) {
+    .dark-mode-btn {
+        margin-right: 10px;
+        padding: 10px 13px;
+    }
+}
+
+
+
+
         .hero {
             display: flex;
             justify-content: center;
@@ -322,7 +383,10 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
+
+        <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
         <a href="#" class="login-btn" onclick="showModal('login')">Login</a>
+
     </nav>
 
      <!-- نافذة التسجيل/الدخول -->
@@ -381,6 +445,7 @@
             <p>DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more. We provide top-quality solutions tailored to your business needs. Our expert team ensures efficiency, security, and innovation in every project we handle. Join us and take your digital presence to the next level with DevNexus.</p>
         </div>
     </div>
+
     <div class="container">
         <div class="service-box" data-aos="fade-up" onclick="location.href='web.html';" style="cursor: pointer;">
             <img src="webb.jpg" alt="Web Development">
@@ -433,6 +498,8 @@
     <script>
         AOS.init();
     </script>
+
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -516,6 +583,33 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
+
+
+        // Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// تحقق من وضع التخزين المحلي
+const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+if (isDarkMode) {
+    body.classList.add('dark-mode');
+    darkModeToggle.textContent = '☀️';
+}
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDark = body.classList.contains('dark-mode');
+    
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    
+    // إضافة تأثير للزر
+    darkModeToggle.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+        darkModeToggle.style.transform = 'scale(1)';
+    }, 200);
+});
 
 
     </script>
