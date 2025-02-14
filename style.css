@@ -173,8 +173,11 @@ padding: 10px 17px;
 }
 }
 
-
-
+.subtext{
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 300;
+}
 
 .hero {
     display: flex;
