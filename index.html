@@ -9,6 +9,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- رابط أيقونات Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
      
  
 </head>
@@ -17,17 +19,22 @@
     
     <nav class="navbar">
         <button class="hamburger">☰</button>
-        <ul>
+        <!-- <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-        </ul>
+        </ul> -->
+
+        <div class="logo1">DevNexus</div>
+
 
         <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
         <a href="#" class="login-btn" onclick="showModal('login')">Login</a>
 
-    </nav>
+    </nav> 
+
+
 
      <!-- نافذة التسجيل/الدخول -->
      <div class="overlay" id="overlay"></div>
@@ -124,15 +131,87 @@
             <button>Get Started</button>
         </div>
     </div>
-    <div class="footer">
-        <p>&copy; 2025 DevNexus. All Rights Reserved.</p>
-        <p>Contact us: devnexus466@gmail.com | +2001099004016</p>
-        <div class="social-icons">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+
+<!-- أضف هذا الجزء قبل إغلاق body -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <!-- قسم معلومات الشركة -->
+        <div class="footer-section">
+            <h3 class="footer-heading">DevNexus</h3>
+            <div class="company-info">
+                <p class="footer-text">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <span>123 Tech Street, Cairo, Egypt</span>
+                </p>
+                <p class="footer-text">
+                    <i class="fas fa-phone icon"></i>
+                    <a href="tel:+2001099004016">+20 01099004016</a>
+                </p>
+                <p class="footer-text">
+                    <i class="fas fa-envelope icon"></i>
+                    <a href="mailto:devnexus466@gmail.com">devnexus466@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- قسم الروابط المهمة -->
+        <div class="footer-section">
+            <h3 class="footer-heading">روابط سريعة</h3>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html"> Call Us</a></li>
+                <li><a href="privacy.html">privacy policy </a></li>
+                <li><a href="terms.html">Terms and Conditions </a></li>
+                <li><a href="faq.html">Frequently asked questions </a></li>
+            </ul>
+        </div>
+
+        <!-- قسم وسائل التواصل الاجتماعي -->
+        <div class="footer-section">
+            <h3 class="footer-heading">تابعنا</h3>
+            <div class="social-container">
+                <a href="#" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            
+            <!-- خريطة جوجل -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60389549999!2d31.32800092065419!3d30.05946947054083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21be5f%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1717000000000!5m2!1sen!2seg"
+                    width="100%"
+                    height="150"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
         </div>
     </div>
+
+    <!-- حقوق النشر -->
+    <div class="copyright-section">
+        <p class="copyright-text">
+            © 2024 DevNexus. جميع الحقوق محفوظة 
+            <span class="separator">|</span>
+            تصميم وتطوير بواسطة فريق DevNexus
+        </p>
+    </div>
+</footer>
+
+
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
