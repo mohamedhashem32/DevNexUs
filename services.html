@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Solutions Hub - Services</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Services Hero Section */
+        .services-hero {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 2.5rem;
+            color: #2d3436;
+            margin-bottom: 20px;
+        }
+
+        .services-hero p {
+            color: #636e72;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #2d3436;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #636e72;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #2d3436;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .cta-button:hover {
+            background: #0984e3;
+            transform: translateY(-2px);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d3436;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d3436;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            color: #2d3436;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: #2d3436;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.9);
+        }
+
+        textarea.form-input {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-hero {
+                padding: 50px 15px;
+            }
+
+            .services-hero h1 {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                margin: 0 10px;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* تحسينات إضافية للشبكة */
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* تنسيقات الصور الجديدة */
+.service-image {
+    height: 220px;
+    object-position: top;
+}
+
+/* تباين الألوان */
+.cta-button {
+    background: #2d3436;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background: #0984e3;
+    border-color: rgba(255,255,255,0.2);
+}
+
+    /* Global Mobile-First Styles */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 24px;
+            padding: 15px;
+            background: none;
+            border: none;
+            color: #2d3436;
+        }
+
+        nav {
+            padding: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3436;
+            padding: 0.5rem;
+        }
+
+        /* Services Grid Mobile Optimization */
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 30px 15px;
+        }
+
+        .service-card {
+            margin: 0 0 20px 0;
+            padding: 20px;
+        }
+
+        .service-image {
+            height: 180px;
+        }
+
+        /* Mobile Typography */
+        .services-hero h1 {
+            font-size: 1.8rem;
+            line-height: 1.3;
+            padding: 0 15px;
+        }
+
+        .services-hero p {
+            font-size: 0.95rem;
+            padding: 0 15px;
+        }
+
+        /* Testimonials Mobile Layout */
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+            padding: 0 15px;
+        }
+
+        /* FAQ Mobile Styles */
+        .faq-section {
+            padding: 40px 15px;
+        }
+
+        .faq-question {
+            font-size: 0.95rem;
+        }
+
+        /* Contact Form Mobile Optimization */
+        .contact-form {
+            padding: 0 15px;
+        }
+
+        .form-input {
+            font-size: 16px; /* Prevent zoom on iOS */
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 480px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .mobile-menu-icon {
+                display: none;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Mobile Menu Active State */
+        @media (max-width: 767px) {
+            .mobile-menu-icon {
+                display: block;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Existing Styles (Remain the same) */
+        /* ... (Keep previous styles from last code) ... */
+
+
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- Mobile-Friendly Navigation -->
+    <nav>
+        <button class="mobile-menu-icon">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Rest of the Content (Same as previous) -->
+
+
+    <!-- Navigation (Add your nav here) -->
+
+    <section class="services-hero">
+        <h1>Transform Your Digital Presence</h1>
+        <p>Comprehensive solutions tailored to elevate your brand in the digital landscape.</p>
+    </section>
+
+    <div class="services-grid">
+        <!-- Web Design -->
+        <div class="service-card">
+            <img src="services1.jpg" alt="Web Design" class="service-image">
+            <h3>Custom Web Design</h3>
+            <p>Responsive, user-centric websites that convert visitors into customers...</p>
+            <a href="#contact" class="cta-button">Start Project</a>
+        </div>
+        
+        <!-- Repeat other service cards with same structure -->
+    </div>
+
+    <!-- ... (Keep the same head and global styles from previous code) ... -->
+
+<body>
+    <!-- Navigation -->
+    
+    <section class="services-hero">
+        <h1>Comprehensive Digital Solutions</h1>
+        <p>End-to-end professional services covering all aspects of digital transformation</p>
+    </section>
+
+    <div class="services-grid">
+        <!-- Web Design -->
+        <div class="service-card">
+            <img src="services2.jpg" alt="Web Design" class="service-image">
+            <h3>Professional Web Design</h3>
+            <p>Custom responsive websites with modern UX/UI design, optimized for conversions and user engagement.</p>
+            <a href="#contact" class="cta-button">Start Project</a>
+        </div>
+
+        <!-- Web Applications -->
+        <div class="service-card">
+            <img src="services3.png" alt="Web Applications" class="service-image">
+            <h3>Web Applications Development</h3>
+            <p>Robust web applications using latest technologies (React, Angular, Node.js) for enterprise solutions.</p>
+            <a href="#contact" class="cta-button">Discuss Project</a>
+        </div>
+
+        <!-- iOS Apps -->
+        <div class="service-card">
+            <img src="services3.jpg" alt="iOS Apps" class="service-image">
+            <h3>iOS Mobile Applications</h3>
+            <p>Native iOS app development with Swift, featuring seamless integration with Apple ecosystem.</p>
+            <a href="#contact" class="cta-button">Build App</a>
+        </div>
+
+        <!-- Cybersecurity -->
+        <div class="service-card">
+            <img src="services5.jpg" alt="Cybersecurity" class="service-image">
+            <h3>Cybersecurity Solutions</h3>
+            <p>Comprehensive security audits, network protection, and data encryption services.</p>
+            <a href="#contact" class="cta-button">Secure Now</a>
+        </div>
+
+        <!-- Graphic Design -->
+        <div class="service-card">
+            <img src="services6.jpg" alt="Graphic Design" class="service-image">
+            <h3>Professional Graphic Design</h3>
+            <p>Complete branding solutions including logos, marketing materials, and visual identity systems.</p>
+            <a href="#contact" class="cta-button">Design Now</a>
+        </div>
+
+        <!-- Video Editing -->
+        <div class="service-card">
+            <img src="services7.jpg" alt="Video Editing" class="service-image">
+            <h3>Advanced Video Editing</h3>
+            <p>Professional video production and post-production services with motion graphics.</p>
+            <a href="#contact" class="cta-button">Edit Video</a>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="service-card">
+            <img src="services8.jpg" alt="Consulting" class="service-image">
+            <h3>IT Consulting</h3>
+            <p>Strategic technology consulting and digital transformation roadmap development.</p>
+            <a href="#contact" class="cta-button">Get Consultation</a>
+        </div>
+
+        <!-- E-commerce -->
+        <div class="service-card">
+            <img src="services9.jpg" alt="E-commerce" class="service-image">
+            <h3>E-commerce Solutions</h3>
+            <p>Complete online store development with payment integration and inventory management.</p>
+            <a href="#contact" class="cta-button">Build Store</a>
+        </div>
+    </div>
+
+    <!-- ... (Keep the rest of the sections as previous) ... -->
+</body>
+
+    <section class="testimonials">
+        <h2>Client Success Stories</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <img src="services10.jpg" alt="Client" class="testimonial-photo">
+                <p>"The website they delivered exceeded our expectations..."</p>
+                <h4>John Smith, Tech Startup</h4>
+            </div>
+            <!-- Add more testimonials -->
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">What's the typical project timeline?</div>
+            <div class="faq-answer">Most web projects take 4-8 weeks depending on complexity...</div>
+        </div>
+        <!-- Add more FAQ items -->
+    </section>
+
+    <section class="contact-section">
+        <h2>Ready to Transform Your Business?</h2>
+        <form class="contact-form">
+            <input type="text" class="form-input" placeholder="Your Name" required>
+            <input type="email" class="form-input" placeholder="Email Address" required>
+            <textarea class="form-input" placeholder="Project Details" required></textarea>
+            <button type="submit" class="cta-button">Send Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 DevNexus. All rights reserved | Designed and developed by the DevNexus team.</p>
+    </footer>
+
+    <script>
+
+         // Mobile Menu Toggle
+         const menuIcon = document.querySelector('.mobile-menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuIcon.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Prevent horizontal scroll
+        window.addEventListener('resize', () => {
+            document.body.style.overflowX = 'hidden';
+        });
+
+        // Existing JavaScript (Remains same)
+
+
+
+        // Enhanced FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const isActive = item.classList.contains('active');
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                });
+
+                // Toggle current answer
+                if (!isActive) {
+                    answer.style.display = 'block';
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form Validation
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
