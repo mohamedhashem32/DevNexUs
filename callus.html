@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* تنسيقات عامة */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* تنسيقات الصفحة */
+        .contact-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* العنوان الرئيسي */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* شبكة المحتوى */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* بطاقة معلومات الاتصال */
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        /* نموذج الاتصال */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #3498db;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        a{
+            text-decoration: none;
+            color:#3498db ;
+        }
+
+       
+
+        /* تنسيقات الجوال */
+        @media (max-width: 768px) {
+            .contact-page {
+                padding: 20px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-page">
+        <header class="page-header">
+            <h1> Contact us </h1>
+            <p> We are here to answer all your inquiries </p>
+        </header>
+
+        <div class="contact-grid">
+            <!-- بطاقة الهاتف -->
+            <div class="contact-card">
+                <i class="fas fa-phone contact-icon"></i>
+                <h3> call Us </h3>
+                <p class="contact-info">+20 01099004016</p>
+                <a href="tel:+966123456789" class="call-button">Live Call </a>
+            </div>
+
+            <!-- بطاقة البريد الإلكتروني -->
+            <div class="contact-card">
+                <i class="fas fa-envelope contact-icon"></i>
+                <h3> Email </h3>
+                <p class="contact-info">devnexus466@gmail.com</p>
+                <a href="mailto:info@example.com" class="call-button">Send Mail </a>
+            </div>
+
+            <!-- بطاقة العنوان -->
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt contact-icon"></i>
+                <h3>Visit us</h3>
+                <p class="contact-info"> Egypt , Cairo Nasr city </p>
+                <a href="#map" class="call-button"> View Map </a>
+            </div>
+        </div>
+
+        <!-- نموذج الاتصال -->
+        <div class="contact-form">
+            <h2> Send a message </h2> <br>
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder=" Full Name " required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder=" Email " required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder=" Message "></textarea>
+                </div>
+                <button type="submit"> Send a message </button>
+            </form>
+        </div>
+
+        
+    </div>
+</body>
+</html>
