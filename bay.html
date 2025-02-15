@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page - Programming Services</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .payment-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .payment-option:hover {
+            background-color: #e1e1e1;
+        }
+        .payment-option img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .payment-option span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        .form-group input[type="file"] {
+            padding: 8px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Choose Payment Method</h1>
+    <div class="payment-options">
+        <div class="payment-option" data-method="visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+            <span>Credit/Debit Card</span>
+        </div>
+        <div class="payment-option" data-method="paypal">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+            <span>PayPal</span>
+        </div>
+        <div class="payment-option" data-method="vodafone-cash">
+            <img src="cach.webp" alt="Vodafone Cash">
+            <span>Vodafone Cash</span>
+        </div>
+        <div class="payment-option" data-method="insta-pay">
+            <img src="insta.avif" alt="InstaPay">
+            <span>InstaPay</span>
+        </div>
+    </div>
+
+    <!-- Visa Payment Form -->
+    <div id="visa-form" class="hidden">
+        <h2>Credit/Debit Card Details</h2>
+        <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="form-group">
+            <label for="card-name">Cardholder Name</label>
+            <input type="text" id="card-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" required>
+        </div>
+        <button type="submit" class="btn">Pay Now</button>
+    </div>
+
+    <!-- Vodafone Cash Payment Form -->
+    <div id="vodafone-cash-form" class="hidden">
+        <h2>Vodafone Cash Details</h2>
+        <div class="form-group">
+            <label for="vodafone-number">Vodafone Cash Number</label>
+            <input type="text" id="vodafone-number" value="01099004016" readonly>
+        </div>
+        <div class="form-group">
+            <label for="sender-number">Your Number</label>
+            <input type="text" id="sender-number" placeholder="Your Vodafone Number" required>
+        </div>
+        <div class="form-group">
+            <label for="vodafone-screenshot">Upload Payment Screenshot</label>
+            <input type="file" id="vodafone-screenshot" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn">Pay Now</button>
+    </div>
+
+    <!-- InstaPay Payment Form -->
+    <div id="insta-pay-form" class="hidden">
+        <h2>InstaPay Details</h2>
+        <div class="form-group">
+            <label for="insta-pay-account">InstaPay Account</label>
+            <input type="text" id="insta-pay-account" value="8596512863579548" readonly>
+        </div>
+        <div class="form-group">
+            <label for="sender-account">Your Account Number</label>
+            <input type="text" id="sender-account" placeholder="Your Account Number" required>
+        </div>
+        <div class="form-group">
+            <label for="bank-name">Bank Name</label>
+            <input type="text" id="bank-name" placeholder="Bank Name" required>
+        </div>
+        <div class="form-group">
+            <label for="insta-pay-screenshot">Upload Payment Screenshot</label>
+            <input type="file" id="insta-pay-screenshot" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn">Pay Now</button>
+    </div>
+
+    <!-- PayPal Payment Form -->
+    <div id="paypal-form" class="hidden">
+        <h2>PayPal Payment</h2>
+        <p>You will be redirected to PayPal to complete your payment.</p>
+        <button type="submit" class="btn">Proceed to PayPal</button>
+    </div>
+</div>
+
+<script>
+    const paymentOptions = document.querySelectorAll('.payment-option');
+    const visaForm = document.getElementById('visa-form');
+    const vodafoneForm = document.getElementById('vodafone-cash-form');
+    const instaPayForm = document.getElementById('insta-pay-form');
+    const paypalForm = document.getElementById('paypal-form');
+
+    paymentOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            visaForm.classList.add('hidden');
+            vodafoneForm.classList.add('hidden');
+            instaPayForm.classList.add('hidden');
+            paypalForm.classList.add('hidden');
+
+            const method = option.getAttribute('data-method');
+            if (method === 'visa') {
+                visaForm.classList.remove('hidden');
+            } else if (method === 'vodafone-cash') {
+                vodafoneForm.classList.remove('hidden');
+            } else if (method === 'insta-pay') {
+                instaPayForm.classList.remove('hidden');
+            } else if (method === 'paypal') {
+                paypalForm.classList.remove('hidden');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
