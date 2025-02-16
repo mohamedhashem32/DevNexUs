@@ -6,7 +6,7 @@
     <meta name="description" content="DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more.">
     <meta name="keywords" content="web development, mobile apps, cybersecurity, graphic design, server administration, video editing">
     <title>DevNexus - Home</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+     <link rel="icon" type="image/png" href="cyber.jpg">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- رابط أيقونات Font Awesome -->
@@ -43,7 +43,7 @@
              <div class="modal-tab" onclick="switchTab('signup')">Sign Up</div>
          </div>
          <div class="modal-content">
-             <form id="loginForm" class="active" onsubmit="handleLogin(event)">
+             <form action="login.php" method="post" id="loginForm" class="active" onsubmit="handleLogin(event)">
                  <div class="form-group">
                      <label>Email</label>
                      <input type="email" required>
@@ -55,7 +55,7 @@
                  <button type="submit" class="login-btn">Login</button>
              </form>
  
-             <form id="signupForm" onsubmit="handleSignup(event)">
+             <form action="signup.php" id="signupForm" onsubmit="handleSignup(event)">
                  <div class="form-group">
                      <label>Full Name</label>
                      <input type="text" required>
@@ -157,7 +157,7 @@
         <div class="footer-section">
             <h3 class="footer-heading"> Links </h3>
             <ul class="footer-links">
-                <li><a href="about.html">About</a></li>
+                <li><a href="aboutus.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="callus.html"> Call Us</a></li>
                 <li><a href="privacy.html">privacy policy </a></li>
@@ -330,6 +330,32 @@
         setTimeout(() => {
             darkModeToggle.style.transform = 'scale(1)';
         }, 200);
+    });
+});
+
+const paymentOptions = document.querySelectorAll('.payment-option');
+const visaForm = document.getElementById('visa-form');
+const vodafoneForm = document.getElementById('vodafone-cash-form');
+const instaPayForm = document.getElementById('insta-pay-form');
+const paypalForm = document.getElementById('paypal-form');
+
+paymentOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        visaForm.classList.add('hidden');
+        vodafoneForm.classList.add('hidden');
+        instaPayForm.classList.add('hidden');
+        paypalForm.classList.add('hidden');
+
+        const method = option.getAttribute('data-method');
+        if (method === 'visa') {
+            visaForm.classList.remove('hidden');
+        } else if (method === 'vodafone-cash') {
+            vodafoneForm.classList.remove('hidden');
+        } else if (method === 'insta-pay') {
+            instaPayForm.classList.remove('hidden');
+        } else if (method === 'paypal') {
+            paypalForm.classList.remove('hidden');
+        }
     });
 });
 
