@@ -1,366 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more.">
-    <meta name="keywords" content="web development, mobile apps, cybersecurity, graphic design, server administration, video editing">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more."
+    />
+    <meta
+      name="keywords"
+      content="web development, mobile apps, cybersecurity, graphic design, server administration, video editing"
+    />
     <title>DevNexus - Home</title>
-     <link rel="icon" type="image/png" href="cyber.jpg">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="cyber.jpg" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <!-- رابط أيقونات Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-     
- 
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
 
-<body>
-    
+  <body>
     <nav class="navbar">
-        <button class="hamburger">☰</button>
+      <button class="hamburger">☰</button>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="callus.html">Contact Us</a></li>
-        </ul> 
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="callus.html">Contact Us</a></li>
+      </ul>
 
-        <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
-        <a href="#" class="login-btn" onclick="showModal('login')">Login</a>
+      <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
+      <a href="#" class="login-btn" onclick="showModal('login')">Login</a>
+    </nav>
 
-    </nav> 
+    <!-- نافذة التسجيل/الدخول -->
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="modal">
+      <span class="modal-close" onclick="closeModal()">×</span>
+      <div class="modal-tabs">
+        <div class="modal-tab active" onclick="switchTab('login')">Login</div>
+        <div class="modal-tab" onclick="switchTab('signup')">Sign Up</div>
+      </div>
+      <div class="modal-content">
+        <form
+          action="login.php"
+          method="post"
+          id="loginForm"
+          class="active"
+          onsubmit="handleLogin(event)"
+        >
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" required />
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
 
-
-
-     <!-- نافذة التسجيل/الدخول -->
-     <div class="overlay" id="overlay"></div>
-     <div class="modal" id="modal">
-         <span class="modal-close" onclick="closeModal()">×</span>
-         <div class="modal-tabs">
-             <div class="modal-tab active" onclick="switchTab('login')">Login</div>
-             <div class="modal-tab" onclick="switchTab('signup')">Sign Up</div>
-         </div>
-         <div class="modal-content">
-             <form action="login.php" method="post" id="loginForm" class="active" onsubmit="handleLogin(event)">
-                 <div class="form-group">
-                     <label>Email</label>
-                     <input type="email" required>
-                 </div>
-                 <div class="form-group">
-                     <label>Password</label>
-                     <input type="password" required>
-                 </div>
-                 <button type="submit" class="login-btn">Login</button>
-             </form>
- 
-             <form action="signup.php" id="signupForm" onsubmit="handleSignup(event)">
-                 <div class="form-group">
-                     <label>Full Name</label>
-                     <input type="text" required>
-                 </div>
-                 <div class="form-group">
-                     <label>Email</label>
-                     <input type="email" required>
-                 </div>
-                 <div class="form-group">
-                     <label>Password</label>
-                     <input type="password" id="password" required>
-                 </div>
-                 <div class="form-group">
-                     <label>Confirm Password</label>
-                     <input type="password" id="confirmPassword" required>
-                 </div>
-                 <button type="submit" class="login-btn">Sign Up</button>
-             </form>
-         </div>
-     </div>
- 
-
+        <form
+          action="signup.php"
+          id="signupForm"
+          onsubmit="handleSignup(event)"
+        >
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword" required />
+          </div>
+          <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+      </div>
+    </div>
 
     <header>
-        <!-- <h1> Empowering Your Digital Vision with DevNexus </h1> -->
-        <h1> Miss you ya Marwa </h1>
-        <p class="subtext">We craft innovative web and app solutions tailored to your needs, ensuring high performance and scalability.</p>
+      <!-- <h1> Empowering Your Digital Vision with DevNexus </h1> -->
+      <h1>وحشتيني يا ميرو</h1>
+
+      <p class="subtext">
+        We craft innovative web and app solutions tailored to your needs,
+        ensuring high performance and scalability.
+      </p>
     </header>
 
-
     <div class="hero" data-aos="fade-up">
-        <img src="devv.jpg" alt="DevNexus Company Overview">
-        <div class="hero-text">
-            <p>DevNexus is a cutting-edge technology company specializing in web development, mobile applications, cybersecurity, and more. We provide top-quality solutions tailored to your business needs. Our expert team ensures efficiency, security, and innovation in every project we handle. Join us and take your digital presence to the next level with DevNexus.</p>
-        </div>
+      <img src="devv.jpg" alt="DevNexus Company Overview" />
+      <div class="hero-text">
+        <p>
+          DevNexus is a cutting-edge technology company specializing in web
+          development, mobile applications, cybersecurity, and more. We provide
+          top-quality solutions tailored to your business needs. Our expert team
+          ensures efficiency, security, and innovation in every project we
+          handle. Join us and take your digital presence to the next level with
+          DevNexus.
+        </p>
+      </div>
     </div>
 
     <div class="container">
-        <div class="service-box" data-aos="fade-up" onclick="location.href='web.html';" style="cursor: pointer;">
-            <img src="webb.jpg" alt="Web Development">
-            <h3>Web Development</h3>
-            <p>Building modern and responsive websites tailored to your business needs.</p>
-            <button>Get Started</button>
-        </div>
-        <div class="service-box" data-aos="fade-up" onclick="location.href='mobi.html';" style="cursor: pointer;">
-            <img src="mobii.jpg" alt="Mobile App Development">
-            <h3>Mobile App Development</h3>
-            <p>Developing innovative and scalable mobile applications for iOS and Android.</p>
-            <button>Get Started</button>
-        </div>
-        <div class="service-box" data-aos="fade-up" onclick="location.href='Cybersecurity.html';" style="cursor: pointer;">
-            <img src="cyber.jpg" alt="Cybersecurity">
-            <h3>Cybersecurity</h3>
-            <p>Ensuring robust security solutions to protect your digital assets.</p>
-            <button>Get Started</button>
-        </div>
-        <div class="service-box" data-aos="fade-up" onclick="location.href='Graphic.html';" style="cursor: pointer;">
-            <img src="graph.jpg" alt="Graphic Design">
-            <h3>Graphic Design</h3>
-            <p>Creating visually stunning graphics and branding materials.</p>
-            <button>Get Started</button>
-        </div>
-        <div class="service-box" data-aos="fade-up" onclick="location.href='Server.html';" style="cursor: pointer;">
-            <img src="serv.jpg" alt="Server Administration">
-            <h3>Server Administration</h3>
-            <p>Providing expert server setup, management, and maintenance services.</p>
-            <button>Get Started</button>
-        </div>
-        <div class="service-box" data-aos="fade-up" onclick="location.href='Video.html';" style="cursor: pointer;">
-            <img src="vid.jpg" alt="Video Editing">
-            <h3>Video Editing</h3>
-            <p>Professional video editing services for high-quality content production.</p>
-            <button>Get Started</button>
-        </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='web.html';"
+        style="cursor: pointer"
+      >
+        <img src="webb.jpg" alt="Web Development" />
+        <h3>Web Development</h3>
+        <p>
+          Building modern and responsive websites tailored to your business
+          needs.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='mobi.html';"
+        style="cursor: pointer"
+      >
+        <img src="mobii.jpg" alt="Mobile App Development" />
+        <h3>Mobile App Development</h3>
+        <p>
+          Developing innovative and scalable mobile applications for iOS and
+          Android.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='Cybersecurity.html';"
+        style="cursor: pointer"
+      >
+        <img src="cyber.jpg" alt="Cybersecurity" />
+        <h3>Cybersecurity</h3>
+        <p>
+          Ensuring robust security solutions to protect your digital assets.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='Graphic.html';"
+        style="cursor: pointer"
+      >
+        <img src="graph.jpg" alt="Graphic Design" />
+        <h3>Graphic Design</h3>
+        <p>Creating visually stunning graphics and branding materials.</p>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='Server.html';"
+        style="cursor: pointer"
+      >
+        <img src="serv.jpg" alt="Server Administration" />
+        <h3>Server Administration</h3>
+        <p>
+          Providing expert server setup, management, and maintenance services.
+        </p>
+        <button>Get Started</button>
+      </div>
+      <div
+        class="service-box"
+        data-aos="fade-up"
+        onclick="location.href='Video.html';"
+        style="cursor: pointer"
+      >
+        <img src="vid.jpg" alt="Video Editing" />
+        <h3>Video Editing</h3>
+        <p>
+          Professional video editing services for high-quality content
+          production.
+        </p>
+        <button>Get Started</button>
+      </div>
     </div>
 
-<!-- أضف هذا الجزء قبل إغلاق body -->
-<footer class="site-footer">
-    <div class="footer-container">
+    <!-- أضف هذا الجزء قبل إغلاق body -->
+    <footer class="site-footer">
+      <div class="footer-container">
         <!-- قسم معلومات الشركة -->
         <div class="footer-section">
-            <h3 class="footer-heading">DevNexus</h3>
-            <div class="company-info">
-                <p class="footer-text">
-                    <i class="fas fa-map-marker-alt icon"></i>
-                    <span>123 Tech Street, Cairo, Egypt</span>
-                </p>
-                <p class="footer-text">
-                    <i class="fas fa-phone icon"></i>
-                    <a href="tel:+2001099004016">+20 01099004016</a>
-                </p>
-                <p class="footer-text">
-                    <i class="fas fa-envelope icon"></i>
-                    <a href="mailto:devnexus466@gmail.com">devnexus466@gmail.com</a>
-                </p>
-            </div>
+          <h3 class="footer-heading">DevNexus</h3>
+          <div class="company-info">
+            <p class="footer-text">
+              <i class="fas fa-map-marker-alt icon"></i>
+              <span>123 Tech Street, Cairo, Egypt</span>
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-phone icon"></i>
+              <a href="tel:+2001099004016">+20 01099004016</a>
+            </p>
+            <p class="footer-text">
+              <i class="fas fa-envelope icon"></i>
+              <a href="mailto:devnexus466@gmail.com">devnexus466@gmail.com</a>
+            </p>
+          </div>
         </div>
 
         <!-- قسم الروابط المهمة -->
         <div class="footer-section">
-            <h3 class="footer-heading"> Links </h3>
-            <ul class="footer-links">
-                <li><a href="aboutus.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="callus.html"> Call Us</a></li>
-                <li><a href="privacy.html">privacy policy </a></li>
-                <li><a href="terms.html">Terms and Conditions </a></li>
-                <li><a href="faq.html">Frequently asked questions </a></li>
-            </ul>
+          <h3 class="footer-heading">Links</h3>
+          <ul class="footer-links">
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="callus.html"> Call Us</a></li>
+            <li><a href="privacy.html">privacy policy </a></li>
+            <li><a href="terms.html">Terms and Conditions </a></li>
+            <li><a href="faq.html">Frequently asked questions </a></li>
+          </ul>
         </div>
 
         <!-- قسم وسائل التواصل الاجتماعي -->
         <div class="footer-section">
-            <h3 class="footer-heading">Follow us</h3>
-            <div class="social-container">
-                <a href="https://github.com/" class="social-link">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="social-link">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" class="social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://www.instagram.com/mohamed_hashem30?igsh=eTl5YXIwMnBibTN4&utm_source=qr" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            
-            <!-- خريطة جوجل -->
-            <div class="map-container">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60389549999!2d31.32800092065419!3d30.05946947054083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21be5f%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1717000000000!5m2!1sen!2seg"
-                    width="100%"
-                    height="150"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+          <h3 class="footer-heading">Follow us</h3>
+          <div class="social-container">
+            <a href="https://github.com/" class="social-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+              class="social-link"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/mohamed_hashem30?igsh=eTl5YXIwMnBibTN4&utm_source=qr"
+              class="social-link"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+
+          <!-- خريطة جوجل -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110502.60389549999!2d31.32800092065419!3d30.05946947054083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fa60b21be5f%3A0x79dfb296e8423bba!2sCairo%2C%20Cairo%20Governorate!5e0!3m2!1sen!2seg!4v1717000000000!5m2!1sen!2seg"
+              width="100%"
+              height="150"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- حقوق النشر -->
-    <div class="copyright-section">
+      <!-- حقوق النشر -->
+      <div class="copyright-section">
         <p class="copyright-text">
-            © 2024 DevNexus. جميع الحقوق محفوظة 
-            <span class="separator">|</span>
-            تصميم وتطوير بواسطة فريق DevNexus
+          © 2024 DevNexus. جميع الحقوق محفوظة
+          <span class="separator">|</span>
+          تصميم وتطوير بواسطة فريق DevNexus
         </p>
-    </div>
-</footer>
-
-
-
+      </div>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
-        AOS.init();
+      AOS.init();
     </script>
 
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-XXXXXXXXX-X');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-XXXXXXXXX-X");
 
-            // همبرجر مينو للهاتف
-            document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.navbar ul').classList.toggle('active');
+      // همبرجر مينو للهاتف
+      document.querySelector(".hamburger").addEventListener("click", () => {
+        document.querySelector(".navbar ul").classList.toggle("active");
+      });
+
+      // إغلاق القائمة عند النقر على عنصر
+      document.querySelectorAll(".navbar ul li a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.querySelector(".navbar ul").classList.remove("active");
         });
+      });
 
-        // إغلاق القائمة عند النقر على عنصر
-        document.querySelectorAll('.navbar ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.navbar ul').classList.remove('active');
-            });
-        });
+      // وظائف نافذة التسجيل/الدخول
+      let currentTab = "login";
 
-        // وظائف نافذة التسجيل/الدخول
-        let currentTab = 'login';
-
-        function showModal(tab) {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('modal').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('modal').classList.add('active');
-            }, 10);
-            switchTab(tab);
-        }
-
-        function closeModal() {
-            document.getElementById('modal').classList.remove('active');
-            setTimeout(() => {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('modal').style.display = 'none';
-            }, 300);
-        }
-
-        function switchTab(tab) {
-            currentTab = tab;
-            document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll(`.modal-tab:nth-child(${tab === 'login' ? 1 : 2})`).forEach(t => t.classList.add('active'));
-            document.querySelectorAll('.modal-content form').forEach(f => f.classList.remove('active'));
-            document.getElementById(`${tab}Form`).classList.add('active');
-        }
-
-        // إغلاق النافذة عند النقر خارجها
-        document.getElementById('overlay').addEventListener('click', closeModal);
-
-        // معالجة النماذج
-        function handleLogin(e) {
-            e.preventDefault();
-            // أضف هنا منطق تسجيل الدخول
-            alert('Login Successful!');
-            closeModal();
-        }
-
-        function handleSignup(e) {
-            e.preventDefault();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            // أضف هنا منطق التسجيل
-            alert('Signup Successful!');
-            closeModal();
-        }
-
-        // أنيميشن للعناصر عند التمرير
-        AOS.init({
-            duration: 1000,
-            once: true,
-            easing: 'ease-in-out',
-        });
-
-        // إغلاق النافذة بالزر ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
-
-        // الخطوة 3: تحديث الـ JavaScript
-    document.addEventListener('DOMContentLoaded', () => {
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    const htmlElement = document.documentElement;
-    
-    // تحميل الإعدادات المحفوظة
-    const savedMode = localStorage.getItem('darkMode');
-    const isDark = savedMode === 'enabled';
-    
-    if (isDark) {
-        htmlElement.classList.add('dark-mode');
-    }
-
-    // إضافة حدث النقر
-    darkModeToggle.addEventListener('click', () => {
-        htmlElement.classList.toggle('dark-mode');
-        
-        // حفظ الإعدادات
-        const isDarkNow = htmlElement.classList.contains('dark-mode');
-        localStorage.setItem('darkMode', isDarkNow ? 'enabled' : 'disabled');
-        
-        // تأثير للزر عند النقر
-        darkModeToggle.style.transform = 'scale(1.2)';
+      function showModal(tab) {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("modal").style.display = "block";
         setTimeout(() => {
-            darkModeToggle.style.transform = 'scale(1)';
-        }, 200);
-    });
-});
+          document.getElementById("modal").classList.add("active");
+        }, 10);
+        switchTab(tab);
+      }
 
-const paymentOptions = document.querySelectorAll('.payment-option');
-const visaForm = document.getElementById('visa-form');
-const vodafoneForm = document.getElementById('vodafone-cash-form');
-const instaPayForm = document.getElementById('insta-pay-form');
-const paypalForm = document.getElementById('paypal-form');
+      function closeModal() {
+        document.getElementById("modal").classList.remove("active");
+        setTimeout(() => {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("modal").style.display = "none";
+        }, 300);
+      }
 
-paymentOptions.forEach(option => {
-    option.addEventListener('click', () => {
-        visaForm.classList.add('hidden');
-        vodafoneForm.classList.add('hidden');
-        instaPayForm.classList.add('hidden');
-        paypalForm.classList.add('hidden');
+      function switchTab(tab) {
+        currentTab = tab;
+        document
+          .querySelectorAll(".modal-tab")
+          .forEach((t) => t.classList.remove("active"));
+        document
+          .querySelectorAll(`.modal-tab:nth-child(${tab === "login" ? 1 : 2})`)
+          .forEach((t) => t.classList.add("active"));
+        document
+          .querySelectorAll(".modal-content form")
+          .forEach((f) => f.classList.remove("active"));
+        document.getElementById(`${tab}Form`).classList.add("active");
+      }
 
-        const method = option.getAttribute('data-method');
-        if (method === 'visa') {
-            visaForm.classList.remove('hidden');
-        } else if (method === 'vodafone-cash') {
-            vodafoneForm.classList.remove('hidden');
-        } else if (method === 'insta-pay') {
-            instaPayForm.classList.remove('hidden');
-        } else if (method === 'paypal') {
-            paypalForm.classList.remove('hidden');
+      // إغلاق النافذة عند النقر خارجها
+      document.getElementById("overlay").addEventListener("click", closeModal);
+
+      // معالجة النماذج
+      function handleLogin(e) {
+        e.preventDefault();
+        // أضف هنا منطق تسجيل الدخول
+        alert("Login Successful!");
+        closeModal();
+      }
+
+      function handleSignup(e) {
+        e.preventDefault();
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
         }
-    });
-});
+        // أضف هنا منطق التسجيل
+        alert("Signup Successful!");
+        closeModal();
+      }
 
+      // أنيميشن للعناصر عند التمرير
+      AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out",
+      });
 
+      // إغلاق النافذة بالزر ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      // الخطوة 3: تحديث الـ JavaScript
+      document.addEventListener("DOMContentLoaded", () => {
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const htmlElement = document.documentElement;
+
+        // تحميل الإعدادات المحفوظة
+        const savedMode = localStorage.getItem("darkMode");
+        const isDark = savedMode === "enabled";
+
+        if (isDark) {
+          htmlElement.classList.add("dark-mode");
+        }
+
+        // إضافة حدث النقر
+        darkModeToggle.addEventListener("click", () => {
+          htmlElement.classList.toggle("dark-mode");
+
+          // حفظ الإعدادات
+          const isDarkNow = htmlElement.classList.contains("dark-mode");
+          localStorage.setItem("darkMode", isDarkNow ? "enabled" : "disabled");
+
+          // تأثير للزر عند النقر
+          darkModeToggle.style.transform = "scale(1.2)";
+          setTimeout(() => {
+            darkModeToggle.style.transform = "scale(1)";
+          }, 200);
+        });
+      });
+
+      const paymentOptions = document.querySelectorAll(".payment-option");
+      const visaForm = document.getElementById("visa-form");
+      const vodafoneForm = document.getElementById("vodafone-cash-form");
+      const instaPayForm = document.getElementById("insta-pay-form");
+      const paypalForm = document.getElementById("paypal-form");
+
+      paymentOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          visaForm.classList.add("hidden");
+          vodafoneForm.classList.add("hidden");
+          instaPayForm.classList.add("hidden");
+          paypalForm.classList.add("hidden");
+
+          const method = option.getAttribute("data-method");
+          if (method === "visa") {
+            visaForm.classList.remove("hidden");
+          } else if (method === "vodafone-cash") {
+            vodafoneForm.classList.remove("hidden");
+          } else if (method === "insta-pay") {
+            instaPayForm.classList.remove("hidden");
+          } else if (method === "paypal") {
+            paypalForm.classList.remove("hidden");
+          }
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
